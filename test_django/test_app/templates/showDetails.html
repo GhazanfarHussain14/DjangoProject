@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static tailwind_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% tailwind_css %}
+</head>
+<body class="text-center mx-4 space-y-2">
+    <h1 class="text-green-600 text-5xl font-bold">All Record</h1>
+  
+<div class="grid grid-flow-col text-center p-2">
+    <table class="border-Collapse border border-green-900">
+        <thead>
+            <tr>
+                <th class="border border-green-600">Name</th>
+                <th class="border border-green-600">E-mail</th>
+            </tr>
+           
+        </thead>
+        <tbody>
+            {% for x in alldata %}
+            <tr>
+                <td class="border border-green-600">{{x.name}}</td>
+                <td class="border border-green-600">{{x.email}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<a href="/addDetails">Back</a>
+</body>
+</html>
